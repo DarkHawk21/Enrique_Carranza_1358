@@ -14,7 +14,12 @@ class Array2D:
             self.__data.append(tmp)
 
     def to_string(self):
-        print(self.__data)
+        #print(self.__data)
+        for fila in range(self.__rows):
+            print("       ", end="")
+            for columna in range(self.__cols):
+                print(self.__data[fila][columna], "", end="")
+            print("")
 
     def get_num_rows(self):
         return self.__rows
@@ -35,11 +40,10 @@ class Array2D:
         if (row >= 0 and row < self.__rows) and (col >= 0 and col < self.__cols):
             return self.__data[row][col]
         
-def main():
+'''def main():
     Array = Array2D(5,5)
     Array.to_string()
     print(f"El numero de renglones", Array.get_num_rows())
     print(f"El numero de columnas", Array.get_num_cols())
-
-main()
+main()'''
     
