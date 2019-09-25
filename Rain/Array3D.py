@@ -34,7 +34,7 @@ class Array3D:
 
     def get_item(self, row, col, depth):
         if (row >= 0 and row < self.__rows) and (col >= 0 and col < self.__cols) and (depth >= 0 and depth < self.__depth):
-            print(self.__data[depth][row][col])
+            return self.__data[depth][row][col]
         else:
             print("Los valores de r, c y d no están en el rango")
 
@@ -46,18 +46,3 @@ class Array3D:
 
     def to_string(self):
         print(self.__data)
-
-#Pruebas
-def main():
-    Array = Array3D(3,3,3)
-    Array.to_string()
-    Array.clearing(0)
-    Array.to_string()
-    Array.get_num_rows()
-    Array.get_num_cols()
-    Array.get_num_depth()
-    Array.set_item(2,2,2,20)
-    Array.get_item(2,2,2)
-    Array.to_string()
-    
-main()
