@@ -1,0 +1,41 @@
+# Objetivo -> Conocer el ADT "Array2D"
+# @Author -> Carranza Balderas Enrique
+# Grupo -> 1358 FES Aragón
+
+class Array2D:
+    def __init__(self, rows, cols):
+        self.__rows = rows
+        self.__cols = cols
+        self.__data = []
+        for r in range(rows):
+            tmp = []
+            for c in range(cols):
+                tmp.append(None)
+            self.__data.append(tmp)
+
+    def to_string(self):
+        #print(self.__data)
+        for fila in range(self.__rows):
+            print("       ", end="")
+            for columna in range(self.__cols):
+                print(self.__data[fila][columna], "", end="")
+            print("")
+
+    def get_num_rows(self):
+        return self.__rows
+
+    def get_num_cols(self):
+        return self.__cols
+
+    def clearing(self, value):
+        for r in range(self.__rows):
+            for c in range(self.__cols):
+                self.__data[r][c] = value
+
+    def set_item(self, row, col, value):
+        if (row >= 0 and row < self.__rows) and (col >= 0 and col < self.__cols):
+            self.__data[row][col] = value               
+
+    def get_item(self, row, col):
+        if (row >= 0 and row < self.__rows) and (col >= 0 and col < self.__cols):
+            return self.__data[row][col]
